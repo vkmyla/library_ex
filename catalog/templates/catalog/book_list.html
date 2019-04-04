@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% load django_tables2 %}
+
+{% block content %}
+  <h1>Book List</h1>
+  <h1>{{ view.title }}</h1>
+    {% for book in view.all_books %}
+      <li>
+      {{book.title}} <br>
+        {{book.author}}
+      </li>
+    {% endfor %}
+  {% if book_list %}
+  <ul>
+    {% for book in book_list %}
+      <li>
+        ({{book.author}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}       
+
+  {% render_table view.book_table_data %}       
+{% endblock %}
