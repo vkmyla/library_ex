@@ -1,5 +1,33 @@
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
+    /* white-space: normal; */
     list-style: none;
+}
+
+a {
+  white-space: pre;
+}
+.container-fluid {
+  height: 100%;
+  display: inline-grid;
+  grid-gap: 3px;
+  grid-template-columns:repeat(12, 1fr);
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+              "s c c c c c c c c c c c"
+              "s c c c c c c c c c c c"
+              "s c c c c c c c c c c c";
+}
+
+.col-sm-2 {
+  grid-area: s;
+}
+
+.col-sm-10 {
+  grid-area: c;
+}
+
+.table-container {
+  grid-column: col 2 / span 10;
 }
