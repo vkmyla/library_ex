@@ -4,12 +4,14 @@ from catalog.models import Book
 
 
 class BookTable(tables.Table):
+    select = tables.Column()
 #    title = tables.LinkColumn('book-detail', args=[A('pk')])
 #    author = tables.LinkColumn('book-detail', args=[A('pk')])
     pass
 
     class Meta:
-        model = Book
-        fields = ['title','author', 'genre', 'isbn']
-        attrs = {"id": "bk_table", "class": "table-striped table-bordered"}
+        model      = Book
+        fields     = ['title','author', 'genre', 'isbn']
+        attrs      = {"id": "bk_table", "class": "table-striped table-bordered"}
         empty_text = 'there are no books '
+        sequence   = ('select', 'title','author', 'genre', 'isbn')
