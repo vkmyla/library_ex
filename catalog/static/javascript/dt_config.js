@@ -4,11 +4,14 @@ $(document).ready(function() {
         order: [[ 1, "desc" ]],
         columns: [
                  {data: null, defaultContent: '', title: '', searchable: false,
-                   orderable: false}
+                   orderable: false},
+        {orderable: true},
+        {orderable: true},
+        {orderable: true},
+        {orderable: true}
                  ],
         columnDefs: [
             {
-                ordarable: false,
                 targets: 0,
                 className: 'select-checkbox',
                 checkboxes: {selectRow: true}
@@ -27,8 +30,8 @@ $(document).ready(function() {
             },
             {
                 name: 'misc',
-                orderable: false,
-                searchable: false,
+                orderable: true,
+                searchable: true,
                 targets: [3, 4]
             }
         ],
